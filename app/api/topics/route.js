@@ -3,6 +3,7 @@ import connectMongoDB from "@/db/mongodb";
 import { NextResponse } from "next/server";
 
 // CREATE TOPICS
+// This function handles POST requests to the /api/topics endpoint.
 export async function POST(req) {
   const { title, description } = await req.json();
   await connectMongoDB();
@@ -23,6 +24,7 @@ export async function GET() {
 }
 
 // DELETE TOPICS
+// This function handles DELETE requests to the /api/topics endpoint.
 export async function DELETE(req) {
   // Use ID as the search parameter
   const id = req.nextUrl.searchParams.get("id");
@@ -32,6 +34,7 @@ export async function DELETE(req) {
 }
 
 // UPDATE TOPICS
+// This function handles PUT requests to the /api/topics endpoint.
 export async function PUT(req) {
   const { id, title, description } = await req.json();
   await connectMongoDB();
