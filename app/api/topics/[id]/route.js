@@ -22,7 +22,7 @@ export async function PUT(req, { params }) {
 // This function handles GET requests to the /api/topics/[id] endpoint.
 export async function GET(req, { params }) {
   // DESTRUCTURE THE ID FROM THE PARAMS
-  const { id } = params;
+  const { id } = await params;
   // CONNECT TO MONGODB
   await connectMongoDB();
   // FIND THE TOPIC BY ID
